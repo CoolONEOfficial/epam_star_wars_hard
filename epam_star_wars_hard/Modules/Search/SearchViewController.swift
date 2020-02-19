@@ -40,7 +40,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func didTextApplied(_ text: String) {
-        presenter.didSearchSubmitted(text)
+        //presenter.didSearchSubmitted(text)
     }
 }
 

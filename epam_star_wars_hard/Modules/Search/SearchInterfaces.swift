@@ -9,7 +9,7 @@
 //
 
 import Foundation
-import Alamofire
+//import Alamofire
 
 enum SearchNavigationOption {
     case details
@@ -22,10 +22,10 @@ protocol SearchViewInterface: ViewInterface {
 }
 
 protocol SearchPresenterInterface: PresenterInterface {
-    func didSearchSubmitted(_ query: String)
+//    func didSearchSubmitted(_ query: String)
 }
 
 protocol SearchInteractorInterface: InteractorInterface {
-    @discardableResult
-    func searchCharacters(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest
+//    @discardableResult
+//    func searchCharacters(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest
 }

@@ -22,8 +22,6 @@
 		8543B62F23FC44A3005432D9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B62A23FC44A3005432D9 /* SearchViewController.swift */; };
 		8543B63023FC44A3005432D9 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B62B23FC44A3005432D9 /* SearchInteractor.swift */; };
 		8543B63123FC44A3005432D9 /* SearchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B62C23FC44A3005432D9 /* SearchWireframe.swift */; };
-		8543B64123FC4F22005432D9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8543B64023FC4F22005432D9 /* Alamofire.framework */; };
-		8543B64223FC4F22005432D9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8543B64023FC4F22005432D9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8543B64A23FC547C005432D9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B64923FC547C005432D9 /* NetworkService.swift */; };
 		8543B65323FC6313005432D9 /* People+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B65123FC6313005432D9 /* People+CoreDataClass.swift */; };
 		8543B65423FC6313005432D9 /* People+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B65223FC6313005432D9 /* People+CoreDataProperties.swift */; };
@@ -33,20 +31,6 @@
 		8543B66723FC8002005432D9 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8543B66623FC8002005432D9 /* Search.storyboard */; };
 		8543B68323FC84EF005432D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B68223FC84EF005432D9 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8543B64323FC4F22005432D9 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8543B64223FC4F22005432D9 /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8543B5F423FC36D3005432D9 /* epam_star_wars_hard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epam_star_wars_hard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8543B64123FC4F22005432D9 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +218,6 @@
 				8543B5F023FC36D3005432D9 /* Sources */,
 				8543B5F123FC36D3005432D9 /* Frameworks */,
 				8543B5F223FC36D3005432D9 /* Resources */,
-				8543B64323FC4F22005432D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

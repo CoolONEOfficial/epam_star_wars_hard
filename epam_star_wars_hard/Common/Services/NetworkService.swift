@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import Alamofire
+//import Alamofire
 
-typealias PeopleResponseCompletionBlock = (DataResponse<PeopleResponse, AFError>) -> (Void)
+//typealias PeopleResponseCompletionBlock = (DataResponse<PeopleResponse, AFError>) -> (Void)
 
 class NetworkService {
-    func searchPeoples(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest {
-        return AF.request("https://swapi.co/api/people/?search=\(query)").responseDecodable(of: PeopleResponse.self, completionHandler: completion)
-    }
+//    func searchPeoples(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest {
+//        return AF.request("https://swapi.co/api/people/?search=\(query)").responseDecodable(of: PeopleResponse.self, completionHandler: completion)
+//    }
 }

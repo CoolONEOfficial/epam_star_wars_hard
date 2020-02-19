@@ -9,7 +9,7 @@
 //
 
 import Foundation
-import Alamofire
+//import Alamofire
 
 final class SearchInteractor {
     
@@ -20,8 +20,8 @@ final class SearchInteractor {
 // MARK: - Extensions -
 
 extension SearchInteractor: SearchInteractorInterface {
-    @discardableResult
-    func searchCharacters(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest {
-        return _networkService.searchPeoples(query, completion)
-    }
+//    @discardableResult
+//    func searchCharacters(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest {
+//        return _networkService.searchPeoples(query, completion)
+//    }
 }

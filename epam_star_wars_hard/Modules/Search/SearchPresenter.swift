@@ -30,9 +30,9 @@ final class SearchPresenter {
 // MARK: - Extensions -
 
 extension SearchPresenter: SearchPresenterInterface {
-    func didSearchSubmitted(_ query: String) {
-        interactor.searchCharacters(query) { (response) in
-            debugPrint("resp: \(response)")
-        }
-    }
+//    func didSearchSubmitted(_ query: String) {
+//        interactor.searchCharacters(query) { (response) in
+//            debugPrint("resp: \(response)")
+//        }
+//    }
 }

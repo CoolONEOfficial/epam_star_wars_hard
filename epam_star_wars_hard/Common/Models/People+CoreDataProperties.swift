@@ -18,5 +18,5 @@ extension People {
     }
 
     @NSManaged public var name: String?
-
+    @NSManaged public var height: String?
 }

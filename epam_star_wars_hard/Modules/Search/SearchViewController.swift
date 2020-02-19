@@ -22,7 +22,25 @@ final class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        searchBar.delegate = self
+        searchBar.delegate = self
+        presenter.viewDidLoad()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = presenter.item(at: indexPath)
+        let cell = UITableViewCell()
+        
+        cell.textLabel?.text = item.title
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfItems()
     }
 }
 
@@ -40,11 +58,23 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func didTextApplied(_ text: String) {
-        //presenter.didSearchSubmitted(text)
+        presenter.searchDidSubmitted(text)
     }
 }
 
 // MARK: - Extensions -
 
 extension SearchViewController: SearchViewInterface {
+    func reloadData() {
+        self.tableView.reloadData()
+    }
+    
+    func setEmptyPlaceholderHidden(_ hidden: Bool) {
+        // TODO: empty placeholder
+    }
+    
+    func setLoadingVisible(_ visible: Bool) {
+        // TODO: loading indication
+    }
+    
 }

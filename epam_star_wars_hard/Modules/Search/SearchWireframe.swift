@@ -13,11 +13,13 @@ import UIKit
 final class SearchWireframe: BaseWireframe {
 
     // MARK: - Private properties -
+    
+    private let storyboard = UIStoryboard(name: "Search", bundle: nil)
 
     // MARK: - Module setup -
 
     init() {
-        let moduleViewController = SearchViewController()
+        let moduleViewController = storyboard.instantiateViewController(ofType: SearchViewController.self)
         super.init(viewController: moduleViewController)
 
         let interactor = SearchInteractor()
@@ -36,7 +38,6 @@ extension SearchWireframe: SearchWireframeInterface {
         case .details:
             _presentDetails()
         }
-
     }
     
     private func _presentDetails() {

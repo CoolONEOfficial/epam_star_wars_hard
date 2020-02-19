@@ -7,12 +7,21 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
+import CoreData
 
-//typealias PeopleResponseCompletionBlock = (DataResponse<PeopleResponse, AFError>) -> (Void)
+typealias PeopleNetworkResponseCompletionBlock = (DataResponse<PeopleResponse, AFError>) -> (Void)
 
 class NetworkService {
-//    func searchPeoples(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest {
-//        return AF.request("https://swapi.co/api/people/?search=\(query)").responseDecodable(of: PeopleResponse.self, completionHandler: completion)
-//    }
+    func searchPeoples(
+        query: String,
+        viewContext: NSManagedObjectContext,
+        completion: @escaping PeopleNetworkResponseCompletionBlock
+    ) -> DataRequest {
+        let decoder = JSONDecoder()
+        decoder.userInfo[CodingUserInfoKey.context!] = viewContext
+        
+        return AF.request("\(Constants.API.createUrl(endpoint: .search))\(query)")
+            .responseDecodable(of: PeopleResponse.self, decoder: decoder, completionHandler: completion)
+    }
 }

@@ -9,9 +9,12 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
+import CoreData
 
 final class SearchInteractor {
+    
+    lazy var container = NSPersistentContainer(name: "CoreData")
     
     fileprivate let _networkService = NetworkService()
     
@@ -20,8 +23,8 @@ final class SearchInteractor {
 // MARK: - Extensions -
 
 extension SearchInteractor: SearchInteractorInterface {
-//    @discardableResult
-//    func searchCharacters(_ query: String, _ completion: @escaping PeopleResponseCompletionBlock) -> DataRequest {
-//        return _networkService.searchPeoples(query, completion)
-//    }
+    @discardableResult
+    func searchCharacters(query: String, completion: @escaping PeopleNetworkResponseCompletionBlock) -> DataRequest {
+        return _networkService.searchPeoples(query: query, viewContext: container.viewContext, completion: completion)
+    }
 }

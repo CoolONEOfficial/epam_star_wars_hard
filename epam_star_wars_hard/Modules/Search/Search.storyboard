@@ -9,7 +9,7 @@
         <!--Root View Controller-->
         <scene sceneID="Ust-K7-IJ4">
             <objects>
-                <tableViewController id="CK9-0F-dpO" customClass="SearchViewController" customModule="epam_star_wars_hard" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchViewController" id="CK9-0F-dpO" customClass="SearchViewController" customModule="epam_star_wars_hard" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ulH-Qu-Wda">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

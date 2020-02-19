@@ -11,6 +11,7 @@
 		8528FD0B23FD5FFB009C15E6 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8543B64023FC4F22005432D9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8528FD0E23FD790D009C15E6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD0D23FD790D009C15E6 /* Constants.swift */; };
 		8528FD1023FD7A9A009C15E6 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD0F23FD7A9A009C15E6 /* LocalService.swift */; };
+		8528FD1623FD9A01009C15E6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD1523FD9A01009C15E6 /* SearchBar.swift */; };
 		8543B5F823FC36D3005432D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B5F723FC36D3005432D9 /* AppDelegate.swift */; };
 		8543B60223FC36D3005432D9 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8543B60023FC36D3005432D9 /* CoreData.xcdatamodeld */; };
 		8543B60423FC36D3005432D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8543B60323FC36D3005432D9 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		8528FD0D23FD790D009C15E6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8528FD0F23FD7A9A009C15E6 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
+		8528FD1523FD9A01009C15E6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8543B5F423FC36D3005432D9 /* epam_star_wars_hard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epam_star_wars_hard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8543B5F723FC36D3005432D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8543B60123FC36D3005432D9 /* epam_star_wars_hard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = epam_star_wars_hard.xcdatamodel; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				8543B65623FC638E005432D9 /* CodingUserInfoKey.swift */,
+				8528FD1523FD9A01009C15E6 /* SearchBar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				8543B62D23FC44A3005432D9 /* SearchInterfaces.swift in Sources */,
 				8543B65423FC6313005432D9 /* People+CoreDataProperties.swift in Sources */,
 				8543B65323FC6313005432D9 /* People+CoreDataClass.swift in Sources */,
+				8528FD1623FD9A01009C15E6 /* SearchBar.swift in Sources */,
 				8543B65B23FC7BEB005432D9 /* StarWarsNavigationController.swift in Sources */,
 				8543B63023FC44A3005432D9 /* SearchInteractor.swift in Sources */,
 				8543B65923FC708F005432D9 /* PeopleResponse.swift in Sources */,

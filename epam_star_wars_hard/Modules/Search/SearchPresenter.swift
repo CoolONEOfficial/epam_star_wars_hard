@@ -45,6 +45,7 @@ extension SearchPresenter: SearchPresenterInterface {
     }
     
     func searchDidSubmitted(_ query: String) {
+        view.setLoadingVisible(true)
         interactor.searchCharacters(query: query) { (response) in
             switch response.result {
             case .success(let response):
@@ -52,6 +53,7 @@ extension SearchPresenter: SearchPresenterInterface {
             case .failure(let error):
                 debugPrint("Response error! \(error.localizedDescription)")
             }
+            self.view.setLoadingVisible(false)
         }
     }
     

@@ -74,7 +74,7 @@ extension SearchViewController: SearchViewInterface {
     }
     
     func setLoadingVisible(_ visible: Bool) {
-        // TODO: loading indication
+        searchBar.isLoading = visible
     }
     
 }

@@ -12,7 +12,22 @@ import CoreData
 typealias PeopleLocalResponseCompletionBlock = (NSPersistentStoreDescription, Error?) -> Void
 
 class LocalService {
-    func getRecents(container: NSPersistentContainer, completion: @escaping PeopleLocalResponseCompletionBlock) {
-        container.loadPersistentStores(completionHandler: completion)
+    func getRecents(viewContext: NSManagedObjectContext) -> [People]? {
+        do {
+            return try viewContext.fetch(People.fetchRequest())
+        } catch {
+            print("Fetch failed")
+            return nil
+        }
+    }
+    
+    func addRecent(_ people: People, viewContext: NSManagedObjectContext) {
+        viewContext.insert(people)
+        
+        do {
+          try viewContext.save()
+        } catch let error as NSError {
+          print("Could not save. \(error), \(error.userInfo)")
+        }
     }
 }

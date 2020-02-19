@@ -41,24 +41,30 @@ extension SearchPresenter: SearchPresenterInterface {
     }
     
     func didSelectItem(at indexPath: IndexPath) {
+        interactor.addRecent(_items[indexPath.row])
+        
         // TODO: open details
     }
     
     func searchDidSubmitted(_ query: String) {
-        view.setLoadingVisible(true)
-        interactor.searchCharacters(query: query) { (response) in
-            switch response.result {
-            case .success(let response):
-                self._handlePeoplesSearchResult(response)
-            case .failure(let error):
-                debugPrint("Response error! \(error.localizedDescription)")
+        if query.isEmpty {
+            _showRecents()
+        } else {
+            view.setLoadingVisible(true)
+            interactor.searchCharacters(query: query) { (response) in
+                switch response.result {
+                case .success(let response):
+                    self._handlePeoplesSearchResult(response)
+                case .failure(let error):
+                    debugPrint("Response error! \(error.localizedDescription)")
+                }
+                self.view.setLoadingVisible(false)
             }
-            self.view.setLoadingVisible(false)
         }
     }
     
     func viewDidLoad() {
-        // TODO: load recents
+        _showRecents()
     }
     
     // MARK: Utility
@@ -70,5 +76,10 @@ extension SearchPresenter: SearchPresenterInterface {
         } else {
             debugPrint("Result peoples is not found!")
         }
+    }
+    
+    private func _showRecents() {
+        _items = interactor.loadRecents() ?? []
+        view.reloadData()
     }
 }

@@ -13,8 +13,10 @@ import CoreData
 
 extension People {
 
+    static let entityName = "People"
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<People> {
-        return NSFetchRequest<People>(entityName: "People")
+        return NSFetchRequest<People>(entityName: self.entityName)
     }
 
     @NSManaged public var name: String?

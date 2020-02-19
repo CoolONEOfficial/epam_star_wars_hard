@@ -35,6 +35,8 @@ protocol SearchPresenterInterface: PresenterInterface {
 protocol SearchInteractorInterface: InteractorInterface {
     @discardableResult
     func searchCharacters(query: String, completion: @escaping PeopleNetworkResponseCompletionBlock) -> DataRequest
+    func loadRecents() -> [People]?
+    func addRecent(_ people: People)
 }
 
 protocol SearchViewItemInterface {

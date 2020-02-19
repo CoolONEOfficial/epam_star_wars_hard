@@ -33,12 +33,12 @@ public class People: NSManagedObject, Codable {
         
         guard let contextUserInfoKey = CodingUserInfoKey.context,
             let managedObjectContext = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "People", in: managedObjectContext)
+            let entity = NSEntityDescription.entity(forEntityName: People.self.entityName, in: managedObjectContext)
             else {
                 fatalError("decode failure")
         }
         // Super init of the NSManagedObject
-        self.init(entity: entity, insertInto: managedObjectContext)
+        self.init(entity: entity, insertInto: nil)
         let values = try decoder.container(keyedBy: CodingKeys.self)
         do {
             name = try values.decode(String.self, forKey: .name)

@@ -10,37 +10,48 @@
 
 import UIKit
 
-final class SearchViewController: UITableViewController {
-
-    @IBOutlet var searchBar: UISearchBar!
+final class SearchViewController: UIViewController {
+    
     // MARK: - Public properties -
-
+    
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var collectionView: UICollectionView!
+    
     var presenter: SearchPresenterInterface!
-
+    var numberOfItemsPerRow : Int = 2
+    
     // MARK: - Lifecycle -
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.delegate = self
         presenter.viewDidLoad()
+
+        searchBar.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectItem(at: indexPath)
+}
+
+// MARK: - Extensions -
+
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfItems()
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = presenter.item(at: indexPath)
-        let cell = UITableViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PeopleCell
         
-        cell.textLabel?.text = item.title
-        
+        cell.configure(with: item)
+
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfItems()
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
     }
 }
 
@@ -51,22 +62,21 @@ extension SearchViewController: UISearchBarDelegate {
         searchTask?.cancel()
         
         searchTask = DispatchWorkItem { [weak self] in
-            self?.didTextApplied(searchText)
+            self?.didTextApplied(searchText, searchBar)
         }
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.75, execute: searchTask!)
     }
     
-    func didTextApplied(_ text: String) {
+    func didTextApplied(_ text: String, _ searchBar: UISearchBar) {
+        self.searchBar = searchBar
         presenter.searchDidSubmitted(text)
     }
 }
 
-// MARK: - Extensions -
-
 extension SearchViewController: SearchViewInterface {
     func reloadData() {
-        self.tableView.reloadData()
+        self.collectionView.reloadData()
     }
     
     func setEmptyPlaceholderHidden(_ hidden: Bool) {
@@ -74,7 +84,7 @@ extension SearchViewController: SearchViewInterface {
     }
     
     func setLoadingVisible(_ visible: Bool) {
-        searchBar.isLoading = visible
+        searchBar?.isLoading = visible
     }
     
 }

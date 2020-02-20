@@ -13,6 +13,14 @@
 		8528FD1023FD7A9A009C15E6 /* LocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD0F23FD7A9A009C15E6 /* LocalService.swift */; };
 		8528FD1623FD9A01009C15E6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD1523FD9A01009C15E6 /* SearchBar.swift */; };
 		8528FD1D23FDC571009C15E6 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD1C23FDC571009C15E6 /* PeopleCell.swift */; };
+		8528FD2823FEFC96009C15E6 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8528FD2223FEFC96009C15E6 /* Details.storyboard */; };
+		8528FD2923FEFC96009C15E6 /* DetailsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD2323FEFC96009C15E6 /* DetailsInterfaces.swift */; };
+		8528FD2A23FEFC96009C15E6 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD2423FEFC96009C15E6 /* DetailsPresenter.swift */; };
+		8528FD2B23FEFC96009C15E6 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD2523FEFC96009C15E6 /* DetailsViewController.swift */; };
+		8528FD2C23FEFC96009C15E6 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD2623FEFC96009C15E6 /* DetailsInteractor.swift */; };
+		8528FD2D23FEFC96009C15E6 /* DetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD2723FEFC96009C15E6 /* DetailsWireframe.swift */; };
+		8528FD2F23FF0470009C15E6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD2E23FF0470009C15E6 /* Encodable.swift */; };
+		8528FD3123FF07E8009C15E6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528FD3023FF07E8009C15E6 /* String.swift */; };
 		8543B5F823FC36D3005432D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8543B5F723FC36D3005432D9 /* AppDelegate.swift */; };
 		8543B60223FC36D3005432D9 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8543B60023FC36D3005432D9 /* CoreData.xcdatamodeld */; };
 		8543B60423FC36D3005432D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8543B60323FC36D3005432D9 /* Assets.xcassets */; };
@@ -56,6 +64,14 @@
 		8528FD0F23FD7A9A009C15E6 /* LocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalService.swift; sourceTree = "<group>"; };
 		8528FD1523FD9A01009C15E6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8528FD1C23FDC571009C15E6 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		8528FD2223FEFC96009C15E6 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		8528FD2323FEFC96009C15E6 /* DetailsInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInterfaces.swift; sourceTree = "<group>"; };
+		8528FD2423FEFC96009C15E6 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		8528FD2523FEFC96009C15E6 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		8528FD2623FEFC96009C15E6 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		8528FD2723FEFC96009C15E6 /* DetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsWireframe.swift; sourceTree = "<group>"; };
+		8528FD2E23FF0470009C15E6 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		8528FD3023FF07E8009C15E6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		8543B5F423FC36D3005432D9 /* epam_star_wars_hard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = epam_star_wars_hard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8543B5F723FC36D3005432D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8543B60123FC36D3005432D9 /* epam_star_wars_hard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = epam_star_wars_hard.xcdatamodel; sourceTree = "<group>"; };
@@ -103,6 +119,19 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		8528FD2123FEFC7A009C15E6 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8528FD2223FEFC96009C15E6 /* Details.storyboard */,
+				8528FD2323FEFC96009C15E6 /* DetailsInterfaces.swift */,
+				8528FD2423FEFC96009C15E6 /* DetailsPresenter.swift */,
+				8528FD2523FEFC96009C15E6 /* DetailsViewController.swift */,
+				8528FD2623FEFC96009C15E6 /* DetailsInteractor.swift */,
+				8528FD2723FEFC96009C15E6 /* DetailsWireframe.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		8543B5EB23FC36D3005432D9 = {
 			isa = PBXGroup;
 			children = (
@@ -136,13 +165,13 @@
 		8543B62723FC4494005432D9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				8528FD1E23FDDEBD009C15E6 /* Cell */,
+				8543B66623FC8002005432D9 /* Search.storyboard */,
 				8543B62823FC44A3005432D9 /* SearchInterfaces.swift */,
 				8543B62B23FC44A3005432D9 /* SearchInteractor.swift */,
 				8543B62923FC44A3005432D9 /* SearchPresenter.swift */,
 				8543B62A23FC44A3005432D9 /* SearchViewController.swift */,
 				8543B62C23FC44A3005432D9 /* SearchWireframe.swift */,
-				8543B66623FC8002005432D9 /* Search.storyboard */,
+				8528FD1E23FDDEBD009C15E6 /* Cell */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -211,6 +240,7 @@
 		8543B64723FC5358005432D9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8528FD2123FEFC7A009C15E6 /* Details */,
 				8543B62723FC4494005432D9 /* Search */,
 			);
 			path = Modules;
@@ -230,6 +260,8 @@
 			children = (
 				8543B65623FC638E005432D9 /* CodingUserInfoKey.swift */,
 				8528FD1523FD9A01009C15E6 /* SearchBar.swift */,
+				8528FD2E23FF0470009C15E6 /* Encodable.swift */,
+				8528FD3023FF07E8009C15E6 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -304,6 +336,7 @@
 				8543B60723FC36D3005432D9 /* LaunchScreen.storyboard in Resources */,
 				8543B60423FC36D3005432D9 /* Assets.xcassets in Resources */,
 				8543B66723FC8002005432D9 /* Search.storyboard in Resources */,
+				8528FD2823FEFC96009C15E6 /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,14 +348,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8543B62123FC43A9005432D9 /* ViewInterface.swift in Sources */,
+				8528FD2D23FEFC96009C15E6 /* DetailsWireframe.swift in Sources */,
+				8528FD2C23FEFC96009C15E6 /* DetailsInteractor.swift in Sources */,
 				8543B62523FC43A9005432D9 /* InteractorInterface.swift in Sources */,
 				8543B62E23FC44A3005432D9 /* SearchPresenter.swift in Sources */,
 				8543B62623FC43A9005432D9 /* FormatterInterface.swift in Sources */,
+				8528FD2923FEFC96009C15E6 /* DetailsInterfaces.swift in Sources */,
 				8543B62223FC43A9005432D9 /* PresenterInterface.swift in Sources */,
 				8528FD1023FD7A9A009C15E6 /* LocalService.swift in Sources */,
+				8528FD2A23FEFC96009C15E6 /* DetailsPresenter.swift in Sources */,
 				8528FD1D23FDC571009C15E6 /* PeopleCell.swift in Sources */,
 				8543B62D23FC44A3005432D9 /* SearchInterfaces.swift in Sources */,
+				8528FD3123FF07E8009C15E6 /* String.swift in Sources */,
 				8543B65423FC6313005432D9 /* People+CoreDataProperties.swift in Sources */,
+				8528FD2B23FEFC96009C15E6 /* DetailsViewController.swift in Sources */,
 				8543B65323FC6313005432D9 /* People+CoreDataClass.swift in Sources */,
 				8528FD1623FD9A01009C15E6 /* SearchBar.swift in Sources */,
 				8543B65B23FC7BEB005432D9 /* StarWarsNavigationController.swift in Sources */,
@@ -331,6 +370,7 @@
 				8543B62423FC43A9005432D9 /* BaseWireframe.swift in Sources */,
 				8543B64A23FC547C005432D9 /* NetworkService.swift in Sources */,
 				8543B60223FC36D3005432D9 /* CoreData.xcdatamodeld in Sources */,
+				8528FD2F23FF0470009C15E6 /* Encodable.swift in Sources */,
 				8543B62F23FC44A3005432D9 /* SearchViewController.swift in Sources */,
 				8528FD0E23FD790D009C15E6 /* Constants.swift in Sources */,
 				8543B5F823FC36D3005432D9 /* AppDelegate.swift in Sources */,

@@ -41,9 +41,7 @@ extension SearchInteractor: SearchInteractorInterface {
     }
     
     func loadRecents() -> [People]? {
-        let recents = _localService.getRecents(viewContext: container.viewContext)
-        debugPrint("recents: \(recents)")
-        return recents
+        return _localService.getRecents(viewContext: container.viewContext)
     }
     
     @discardableResult

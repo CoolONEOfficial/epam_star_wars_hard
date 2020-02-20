@@ -43,7 +43,7 @@ extension SearchPresenter: SearchPresenterInterface {
     func didSelectItem(at indexPath: IndexPath) {
         interactor.addRecent(_items[indexPath.row])
         
-        // TODO: open details
+        wireframe.navigate(to: .details(_items[indexPath.row]))
     }
     
     func searchDidSubmitted(_ query: String) {

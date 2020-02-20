@@ -12,10 +12,11 @@ import Foundation
 import Alamofire
 
 enum SearchNavigationOption {
-    case details
+    case details(People)
 }
 
 protocol SearchWireframeInterface: WireframeInterface {
+    func navigate(to option: SearchNavigationOption)
 }
 
 protocol SearchViewInterface: ViewInterface {

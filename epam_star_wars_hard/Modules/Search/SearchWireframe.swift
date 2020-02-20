@@ -11,22 +11,22 @@
 import UIKit
 
 final class SearchWireframe: BaseWireframe {
-
+    
     // MARK: - Private properties -
     
     private let storyboard = UIStoryboard(name: "Search", bundle: nil)
-
+    
     // MARK: - Module setup -
-
+    
     init() {
         let moduleViewController = storyboard.instantiateViewController(ofType: SearchViewController.self)
         super.init(viewController: moduleViewController)
-
+        
         let interactor = SearchInteractor()
         let presenter = SearchPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }
-
+    
 }
 
 // MARK: - Extensions -
@@ -35,19 +35,13 @@ extension SearchWireframe: SearchWireframeInterface {
     
     func navigate(to option: SearchNavigationOption) {
         switch option {
-        case .details:
-            _presentDetails()
+        case .details(let people):
+            _openDetails(with: people)
         }
     }
     
-    private func _presentDetails() {
-//        let wireframe = DetailsWireframe()
-
-//        let wireframeNavigationController = StarWarsNavigationController()
-//        wireframeNavigationController.setRootWireframe(wireframe)
-//
-//        navigationController?.present(wireframeNavigationController, animated: true, completion: nil)
-
+    private func _openDetails(with people: People) {
+        navigationController?.pushWireframe(DetailsWireframe(people: people))
     }
     
 }

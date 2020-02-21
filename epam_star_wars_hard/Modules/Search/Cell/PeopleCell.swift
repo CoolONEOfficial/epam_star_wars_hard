@@ -15,9 +15,8 @@ struct PeopleCellData {
 }
 
 class PeopleCell: UICollectionViewCell {
-    @IBOutlet var textLabel: UILabel!
-    @IBOutlet var horizontalStack: UIStackView!
     @IBOutlet var deleteButton: UIButton!
+    @IBOutlet var textLabel: UILabel!
     
     public var indexPath: IndexPath!
     public var data: PeopleCellData? {

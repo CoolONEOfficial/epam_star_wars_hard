@@ -33,7 +33,10 @@ extension UISearchBar {
                     let newActivityIndicator = UIActivityIndicatorView(style: .medium)
                     newActivityIndicator.startAnimating()
                     if #available(iOS 13.0, *) {
-                        newActivityIndicator.backgroundColor = UIColor.systemGroupedBackground
+                        
+                        newActivityIndicator.backgroundColor = traitCollection.userInterfaceStyle == .light
+                            ? UIColor.systemGroupedBackground
+                            : UIColor.secondarySystemGroupedBackground
                     } else {
                         newActivityIndicator.backgroundColor = UIColor.groupTableViewBackground
                     }

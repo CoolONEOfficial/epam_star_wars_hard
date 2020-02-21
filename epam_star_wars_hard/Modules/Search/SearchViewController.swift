@@ -82,13 +82,9 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
-extension SearchViewController: SearchViewInterface {
+extension SearchViewController: SearchViewInterface {    
     func reloadData() {
         self.collectionView.reloadData()
-    }
-    
-    func setEmptyPlaceholderHidden(_ hidden: Bool) {
-        // TODO: empty placeholder
     }
     
     func setLoadingVisible(_ visible: Bool) {

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import CoreData
+import UIKit
 
 typealias PeopleNetworkResponseCompletionBlock = (DataResponse<PeopleResponse, AFError>) -> (Void)
 

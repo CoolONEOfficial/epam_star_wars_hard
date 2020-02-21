@@ -37,6 +37,8 @@ extension SearchWireframe: SearchWireframeInterface {
         switch option {
         case .details(let people):
             _openDetails(with: people)
+        case .error(let error):
+            _presentAlarm(with: error)
         }
     }
     
@@ -44,4 +46,10 @@ extension SearchWireframe: SearchWireframeInterface {
         navigationController?.pushWireframe(DetailsWireframe(people: people))
     }
     
+    private func _presentAlarm(with error: Error) {
+        let alert = UIAlertController(title: "Error!", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+        navigationController?.present(alert, animated: true, completion: nil)
+    }
 }

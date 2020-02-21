@@ -13,6 +13,7 @@ import Alamofire
 
 enum SearchNavigationOption {
     case details(People)
+    case error(Error)
 }
 
 protocol SearchWireframeInterface: WireframeInterface {
@@ -21,7 +22,6 @@ protocol SearchWireframeInterface: WireframeInterface {
 
 protocol SearchViewInterface: ViewInterface {
     func reloadData()
-    func setEmptyPlaceholderHidden(_ hidden: Bool)
     func setLoadingVisible(_ visible: Bool)
 }
 

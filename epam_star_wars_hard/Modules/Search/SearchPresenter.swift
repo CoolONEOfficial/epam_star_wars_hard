@@ -56,12 +56,14 @@ extension SearchPresenter: SearchPresenterInterface {
             _showRecents()
         } else {
             view.setLoadingVisible(true)
-            interactor.searchCharacters(query: query) { (response) in
+            interactor.searchCharacters(query: query)
+            { (response) in
                 switch response.result {
                 case .success(let response):
                     self._handlePeoplesSearchResult(response)
                 case .failure(let error):
-                    debugPrint("Response error! \(error.localizedDescription)")
+                    self.wireframe.navigate(to: .error(error))
+                    
                 }
                 self.view.setLoadingVisible(false)
             }
@@ -75,6 +77,7 @@ extension SearchPresenter: SearchPresenterInterface {
     // MARK: Utility
     
     private func _handlePeoplesSearchResult(_ result: PeopleResponse) {
+        
         if let peoples = result.results {
             _items = peoples
             view.reloadData()

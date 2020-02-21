@@ -62,8 +62,10 @@ extension SearchPresenter: SearchPresenterInterface {
                 case .success(let response):
                     self._handlePeoplesSearchResult(response)
                 case .failure(let error):
+                    guard !error.isExplicitlyCancelledError else {
+                        return
+                    }
                     self.wireframe.navigate(to: .error(error))
-                    
                 }
                 self.view.setLoadingVisible(false)
             }

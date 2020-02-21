@@ -14,6 +14,19 @@ import UIKit
 typealias PeopleNetworkResponseCompletionBlock = (DataResponse<PeopleResponse, AFError>) -> (Void)
 
 class NetworkService {
+    var _request: DataRequest?
+    var request: DataRequest {
+        get {
+            return _request!
+        }
+        set {
+            if let prevRequest = _request {
+                prevRequest.cancel()
+            }
+            _request = newValue
+        }
+    }
+    
     func searchPeoples(
         query: String,
         viewContext: NSManagedObjectContext,
@@ -22,7 +35,9 @@ class NetworkService {
         let decoder = JSONDecoder()
         decoder.userInfo[CodingUserInfoKey.context!] = viewContext
         
-        return AF.request("\(Constants.API.createUrl(endpoint: .search))\(query)")
+        request = AF.request("\(Constants.API.createUrl(endpoint: .search))\(query)")
             .responseDecodable(of: PeopleResponse.self, decoder: decoder, completionHandler: completion)
+        
+        return request
     }
 }

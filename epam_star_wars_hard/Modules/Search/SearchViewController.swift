@@ -26,7 +26,7 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
-
+        
         searchBar.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -45,8 +45,16 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let item = presenter.item(at: indexPath)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PeopleCell
         
-        cell.configure(with: item)
-
+        debugPrint("text: \(searchBar.text?.isEmpty)")
+        cell.configure(with: PeopleCellData.init(
+            model: item,
+            didDeleteClick: {
+                self.presenter.didDeleteItem(at: indexPath)
+                collectionView.deleteItems(at: [indexPath])
+            },
+            deletable: searchBar.text?.isEmpty ?? true
+        ))
+        
         return cell
     }
     

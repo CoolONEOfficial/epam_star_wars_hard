@@ -46,6 +46,11 @@ extension SearchPresenter: SearchPresenterInterface {
         wireframe.navigate(to: .details(_items[indexPath.row]))
     }
     
+    func didDeleteItem(at indexPath: IndexPath) {
+        interactor.removeRecent(_items[indexPath.row])
+        _items.remove(at: indexPath.row)
+    }
+    
     func searchDidSubmitted(_ query: String) {
         if query.isEmpty {
             _showRecents()

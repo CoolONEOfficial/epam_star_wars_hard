@@ -23,7 +23,15 @@ class LocalService {
     
     func addRecent(_ people: People, viewContext: NSManagedObjectContext) {
         viewContext.insert(people)
-        
+        _apply(viewContext)
+    }
+    
+    func removeRecent(_ people: People, viewContext: NSManagedObjectContext) {
+        viewContext.delete(people)
+        _apply(viewContext)
+    }
+    
+    func _apply(_ viewContext: NSManagedObjectContext) {
         do {
           try viewContext.save()
         } catch let error as NSError {

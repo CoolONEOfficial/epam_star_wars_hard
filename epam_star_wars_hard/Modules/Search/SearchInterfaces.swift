@@ -31,6 +31,7 @@ protocol SearchPresenterInterface: PresenterInterface {
     func numberOfItems() -> Int
     func item(at indexPath: IndexPath) -> SearchViewItemInterface
     func didSelectItem(at indexPath: IndexPath)
+    func didDeleteItem(at indexPath: IndexPath)
 }
 
 protocol SearchInteractorInterface: InteractorInterface {
@@ -38,6 +39,7 @@ protocol SearchInteractorInterface: InteractorInterface {
     func searchCharacters(query: String, completion: @escaping PeopleNetworkResponseCompletionBlock) -> DataRequest
     func loadRecents() -> [People]?
     func addRecent(_ people: People)
+    func removeRecent(_ people: People)
 }
 
 protocol SearchViewItemInterface {

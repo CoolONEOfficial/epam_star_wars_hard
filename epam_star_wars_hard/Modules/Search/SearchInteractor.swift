@@ -36,6 +36,10 @@ final class SearchInteractor {
 // MARK: - Extensions -
 
 extension SearchInteractor: SearchInteractorInterface {
+    func removeRecent(_ people: People) {
+        _localService.removeRecent(people, viewContext: container.viewContext)
+    }
+    
     func addRecent(_ people: People) {
         _localService.addRecent(people, viewContext: container.viewContext)
     }
